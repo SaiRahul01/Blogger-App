@@ -1,0 +1,12 @@
+
+    .parent1 {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 70px;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        }
+        br {
+            display: block;
+            margin: 10px 0;
+         }

@@ -9,10 +9,12 @@ import Navbar from "./Components/Navbar";
 import {signOut} from 'firebase/auth'
 
 import {auth} from './firebase-config'
+import Feed from "./Components/Feed";
+import MyBlogs from "./Components/MyBlogs";
 
 function App() {
 
-  const [isAuth, setisAuth] = useState(false)
+  const [isAuth, setisAuth] = useState(localStorage.getItem("isAuth"))
   
   return (
     <>
@@ -22,7 +24,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home/>}></Route>
         <Route exact path="/login" element={<Login  setisAuth={setisAuth}/>}/>
-        <Route exact path="/createpost" element={<CreatePost/>}/>
+        {<Route exact path="/createpost" element={<CreatePost isAuth={isAuth}/>}/>}
+        <Route exact path="/myblogs" element={<MyBlogs isAuth={isAuth} />}></Route>
+        {<Route exact path="/feed" element={<Feed isAuth={isAuth}/>}/>}
       </Routes>
         
     </Router>
