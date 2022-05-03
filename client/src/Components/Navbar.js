@@ -26,8 +26,8 @@ export default function Navbar(props) {
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
-      <ul className="navbar-nav   " style={{marginLeft:'30%',fontFamily:'Inconsolata'}}>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav    " style={{marginLeft:'30%',fontFamily:'Inconsolata'}}>
         <li className="nav-item">
           {!props.isAuth && <Link className="nav-link active" aria-current="page" to="/">Home</Link>}
         </li>
@@ -45,11 +45,30 @@ export default function Navbar(props) {
         <li className="nav-item">
         { !props.isAuth? <Link className="nav-link" to="/login">Login</Link>:<Link className="nav-link" onClick={logout} to="/" >Log out</Link>}
         </li>
+       
+        
+       
+      </ul>
+      <ul className="navbar-nav  ms-auto  " style={{marginLeft:'30%',fontFamily:'Inconsolata',fontSize:'20px'}}>
+        <li className="nav-item">
+          {props.isAuth && <div className="nav-link active" aria-current="page" to="/feed">{auth.currentUser.displayName}</div>}
+        </li>
+       
+       
         
        
       </ul>
       
     </div>
+    {/* <div className="">
+    <ul className="navbar-nav   " style={{marginLeft:'50%',fontFamily:'Inconsolata'}}>
+    <li className="nav-item">
+        { !props.isAuth? <Link className="nav-link" to="/login">Login</Link>:<Link className="nav-link" onClick={logout} to="/" >Log out</Link>}
+        </li>
+
+      </ul>
+
+    </div> */}
   </div>
 </nav>
     </>
