@@ -1,6 +1,13 @@
 import React from 'react'
 import './Home.css'
+import {useEffect} from 'react'
 export default function Home() {
+  
+
+  useEffect(() => {
+    document.title="Blogger Monkey | Home"
+  }, [])
+  
   return (
     <>
     <div style={{backgroundColor:' #82c5f8'}}>

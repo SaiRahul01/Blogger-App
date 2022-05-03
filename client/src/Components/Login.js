@@ -2,7 +2,7 @@ import React from 'react'
 import {auth,provider} from '../firebase-config'
 import {signInWithPopup} from 'firebase/auth'
 import {useNavigate} from 'react-router-dom'
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import './Login.css'
 export default function Login({setisAuth}) {
 
@@ -21,6 +21,10 @@ export default function Login({setisAuth}) {
     })
 
   }
+  useEffect(() => {
+    document.title="Blogger Monkey | Login"
+  }, [])
+  
 
   return (
     <><br />

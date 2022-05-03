@@ -29,6 +29,7 @@ export default function Feed(props) {
         if (!props.isAuth) {
             nav("/login")
         }
+        document.title="Blogger Monkey | Feed"
     }, [])
 
 

@@ -23,7 +23,9 @@ export default function MyBlogs(props) {
 
 
       }
+      document.title="Blogger Monkey | My Blogs"
     }, [])
+   
     
 
     useEffect(() => {
